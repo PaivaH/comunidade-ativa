@@ -1,5 +1,0 @@
-CREATE TABLE login(
-login varchar(30) NOT NULL PRIMARY KEY,
-email varchar(30) NOT NULL,
-senha varchar (8) NOT NULL
-)
