@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php
+    date_default_timezone_set("America/Sao_Paulo");
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $CPF = $_POST["cpf"];
@@ -15,7 +16,8 @@
     $endereco = $_POST["endereço_queixa"];
     $numend = $_POST["numero"];
     $descricao = $_POST["descrição"];
-    $foto = $_POST["foto"];
+    $image = addslashes(file_get_contents($p['images']['tmp_name']));
+    $dia = date("Y-m-d");
     ?>
 
     <?php
@@ -31,8 +33,8 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP,tipo, Endereco_queixa,num_endereco, Descricao, foto)
-        VALUES ( '$nome', '$email', '$CPF', '$cep', '$tipo', '$endereco', '$numend', '$descricao', '$foto')";
+        $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP,tipo, Endereco_queixa,num_endereco, Descricao, foto, data)
+        VALUES ( '$nome', '$email', '$CPF', '$cep', '$tipo', '$endereco', '$numend', '$descricao', '$imgae', '$dia')";
 
         if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";

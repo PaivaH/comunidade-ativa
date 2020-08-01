@@ -3,7 +3,7 @@
     <head>
         <title>Formulario</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href='main.css'>
+        <link rel="stylesheet" href="main.css">
 
 <body class="body">
     <header class="header">
@@ -15,8 +15,8 @@
 
     </header>
 
-    <main class="main">
-        <h1>Faça sua queixa aqui</h1>
+    <main class="main1">
+        <h1 class="titulo">Faça sua queixa aqui</h1>
         <form class="form" action="Script.php" method="POST">
         <section class="campo_usuario">
                 <label for="nome">Nome</label>
@@ -30,17 +30,17 @@
            
                 <label for="cep" >CEP</label>
                 <input type="tel" required name="cep" minlength="8" maxlength="10" placeholder="12.345-678" ><br><br>
-           
-        </section>
-        <section class="campo_queixa">
                 <label for="queixa" placeholder="queixa">Queixa</label>
                     <select required name="queixa">
                         <option placeholder="" disabled selected>Selecione...</option>
-                        <option placeholder="queixa1">Vazamento de esgoto</option>
+                        <option placeholder=="queixa1">Vazamento de esgoto</option>
                         <option placeholder="queixa2">Falta de água</option>
                         <option placeholder="queixa3">Cano estourado</option>
                         <option placeholder="queixa4">Outros</option>
                       </select><br><br>
+
+        </section>
+        <section class="campo_queixa">
 
                 <label for="endereço_queixa">Rua da ocorrencia</label>
                 <input type="text" required name="endereço_queixa" placeholder="Rua Alveredo"><br><br>
@@ -48,11 +48,14 @@
                 <label for="numero">Numero da ocorrencia</label>
                 <input type="tel" name="numero" placeholder="123"><br><br>
 
-                <label for="descricao">Descrição</label>
-                <input type="text" name="descrição" maxlength="500" placeholder="Resumo do problema a se relatar"><br><br>
-            
                 <label for="foto">Foto do problema</label>
                 <input type="file" name="foto"><br><br> <!-- ver dps - multiplos arquivos-->
+
+                <label for="descricao">Descrição</label>
+                <textarea cols=50 rows=6 name="descrição" maxlength="500" placeholder="Resumo do problema a se relatar"></textarea><br><br>
+
+            
+               
                 
         </section>
         <section class="submit">

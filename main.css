@@ -26,37 +26,65 @@
     font-family: Open Sans;
 }
 .header{
-    padding-bottom: 50px;
     height: 150px;
+    padding-right: 250px;
+    padding-bottom: 30px;
+    width: 80%;
+}
+
+.bform{
+    margin-top: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+    
 }
 .main{
     display: inline-block;
     background-color: #dbe3e1;
     padding-bottom: 15px;
-    padding-top: 25px;
+    padding-top: 15px;
     width: 100%;
+}
+.main1{
+    padding-left: 23%;
+    background-color: #dbe3e1;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+    display: inline-block;
+    
 }
 .campo_usuario{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    padding-right: 35px;
+    
     
 }
 .campo_queixa{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    padding-left: 35px;
+    padding-left: 130px;
 }
 .submit{
     display: flex;
     justify-content: space-around;
-    
+    padding-right: 50%;
 }
 #Bform{
     float: right;
 }
+
+p, h1, h3, table{
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.titulo{
+    padding-left: 13%;
+}
+/*Henio */
 table{
     border: solid 2px;
     font-size: 20px;
