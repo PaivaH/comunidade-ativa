@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulario</title>
+    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+        .body{
+            background-color: #124471;
+            font-family: Open Sans;
+        }
+        .header{
+            padding-bottom: 50px;
+        }
+        .main{
+            display: flex;
+            justify-content: space-around;
+            background-color: #dbe3e1;
+            padding-bottom: 15px;
+            padding-top: 25px;
+        }
+        .campo_usuario{
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            padding-right: 35px;
+            
+        }
+        .campo_queixa{
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            padding-left: 35px;
+        }
+        .submit{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+       
+    </style>
+</head>
+
+<body class="body">
+    <header class="header">
+        <img src=#>
+        <br><br>
+    </header>
+
+    <main class="main">
+        <form class="form">
+        <section class="campo_usuario">
+         
+                <label for="nome">Digite seu nome</label>
+                <input type="text" name="nome" placeholder="Rogério Santos"><br><br>
+           
+                <label for="email">Informe seu email</label>
+                <input type="email" name="email" placeholder="rogeriosantos@comunidadeativa.com.br"><br><br>
+           
+                <label for="cpf">Digite seu cpf</label>
+                <input type="number" name="cpf" placeholder="123.456.789-10"><br><br>
+           
+                <label for="cep">Digite seu Cep</label>
+                <input type="number" name="cep" placeholder="12.345-678"><br><br>
+           
+        </section>
+        <section class="campo_queixa">
+                <label for="queixa">Informe sua queixa</label>
+                    <select name="queixa">
+                        <option value="queixa1">queixa1</option>
+                        <option value="queixa2">queixa2</option>
+                        <option value="queixa3">queixa3</option>
+                        <option value="queixa4">queixa4</option>
+                      </select><br><br>
+
+                <label for="endereço_queixa">Informe a rua da ocorrencia</label>
+                <input type="text" name="endereço_queixa" placeholder="Rua 123"><br><br>
+
+                <label for="descricao"></label>
+                <input type="text" name="descricao" placeholder=""><br><br>
+            
+                <label for="foto"></label>
+                <input type="text" name="foto" placeholder=""><br><br> <!---->
+                
+        </section>
+        <section class="submit">
+            <input type="submit" value="Submit">
+        </section>
+        </form>
+    </main>
+</body>
+</html>
