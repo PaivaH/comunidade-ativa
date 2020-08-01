@@ -59,7 +59,21 @@
 }
 table{
     border: solid 2px;
+    font-size: 20px;
+
 }
 th{
+    background-color: #0879db;
+    width: 100%;
+}
+tr{
+    display: inline-block;
+    text-align: left;
     border: solid 2px;
+    margin: 5px 0 5px 0;
+}
+td{
+    display: inline-table;
+    border: solid 1px;
+
 }
