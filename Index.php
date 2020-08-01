@@ -34,6 +34,34 @@
                         Descrição
                     </th>
                 </tr>
+                <tr>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = ""; 
+                $dbname = "comunidadeativa";
+
+                // Create connection
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                $sql = "SELECT tipo,Endereco_queixa,num_endereco,Descricao FROM formulario";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo "<td> Tipo: " . $row["tipo"] . " |Endereço: " . $row["Endereco_queixa"]. "| Numero: ". $row["num_endereco"] . "| Descrição: " . $row["Descricao"] . "<br></td>";
+                }
+                } else {
+                echo "0 results";
+                }
+                mysqli_close($conn);
+                ?>
+                </tr>
             </table>
             <h3>Consultar ultimas queixas</h3>
             <table>
