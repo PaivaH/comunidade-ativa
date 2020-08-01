@@ -9,26 +9,15 @@
     <?php
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $cpf = $_POST["cpf"];
+    $CPF = $_POST["cpf"];
     $cep = $_POST["cep"];
+    $tipo = $_POST["queixa"];
     $endereco = $_POST["endereço_queixa"];
+    $numend = $_POST["numero"];
     $descricao = $_POST["descrição"];
     $foto = $_POST["foto"];
     ?>
-    <?php
-    echo "Ola " .$nome;
-    echo "<br>";
-    echo "Seu email: " . $email;
-    echo "<br>";
-    echo "CPF: " . $cpf;
-    echo "<br>";
-    echo "CEP: " . $cep;
-    echo "<br>";
-    echo "Endereço da queixa: " . $endereco;
-    echo "<br>";
-    echo "Descrição: " . $descricao;
-    echo "<br>";
-    ?>
+
     <?php
        $servername = "localhost";
         $username = "root";
@@ -42,8 +31,8 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP, Endereco_queixa, Descricao, foto)
-        VALUES ( '$nome', '$email', '$cpf', '$cep', '$endereco', '$descricao', '$foto')";
+        $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP,tipo, Endereco_queixa,num_endereco, Descricao, foto)
+        VALUES ( '$nome', '$email', '$CPF', '$cep', '$tipo', '$endereco', '$numend', '$descricao', '$foto')";
 
         if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
