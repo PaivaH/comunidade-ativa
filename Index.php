@@ -19,7 +19,7 @@
         </header>
         <main class="main">
             <h1>A comunidade ajudando a comunidade</h1>
-            <h3 class="p">O comunidade ativa é uma plataforma interativa, onde qualquer pessoa pode não só monitorar a situação no quesito saneamento básico na sua região, como também fazer denuncias de adversidades que sua região ou de qualquer outra enfrenta. Sendo então, um meio do cidadão praticar sua cidadania com sua voz ativa na comunidade e fiscalizar o papel da prefeitura no seu meio.</h3>
+            <h3 class="p">O comunidade ativa é uma plataforma interativa, onde qualquer pessoa pode, não só monitorar a situação no quesito saneamento básico na sua região, mas também fazer denuncias de adversidades que ocorrem em sua região, ou que qualquer outra enfrenta. Sendo então, um meio do cidadão praticar sua cidadania com voz ativa na comunidade, e fiscalizar o papel do poder publico em seu meio.</h3>
             <h2 style="padding:2%">Consulta dos ultimos registros </h2>
             <table class="consulta">
                 <tr >

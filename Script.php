@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -49,6 +50,8 @@
     }
 
     mysqli_close($conn);
+    header("Location:Index.php"); 
+    exit();
     ?>
 </body>
 </html>
