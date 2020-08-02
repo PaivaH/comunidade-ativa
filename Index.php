@@ -4,34 +4,26 @@
         <meta charset="UTF-8">
         <meta name="description" content="Página de apoio a queixar da comunidade">
         <title>Site modelo</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="Main.css">
     </head>
     <body class="body">
         <header class="header">
             <div class="img">
                 <a href="Index.php">
-                <img src="Comunidade_Ativa_v1.png" width="300px" height="170px"> 
+                <img src="ComunidadeAtiva.png" width="300px" height="170px"> 
                 </a>
                 
-                    <button type="button" id="Bform" class="bform"><a href="formulario.html"><b><h1>Faça sua queixa</h1></b></a></button>
+                    <button type="button" id="Bform" class="bform"><a href="Formulario.html"><b><h1>Registre sua reclamação</h1></b></a></button>
               
             </div>
         </header>
         <main class="main">
-            <h1>What is Lorem Ipsum?</h1>
-            <p class="p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <h3>Consulta da tabela mais reclações</h3>
-            <table>
-                <tr>
-                    <th>
-                        Endereço da queixa
-                    </th>
-                    <th>
-                        Numero
-                    </th>
-                    <th>
-                        Descrição
-                    </th>
+            <h1>A comunidade ajudando a comunidade</h1>
+            <h3 class="p">O comunidade ativa é uma plataforma interativa, onde qualquer pessoa pode não só monitorar a situação no quesito saneamento básico na sua região, como também fazer denuncias de adversidades que sua região ou de qualquer outra enfrenta. Sendo então, um meio do cidadão praticar sua cidadania com sua voz ativa na comunidade e fiscalizar o papel da prefeitura no seu meio.</h3>
+            <h2 style="padding:2%">Consulta dos ultimos registros </h2>
+            <table class="consulta">
+                <tr >
+                    <th style="text-align: center;">Data | Tipo de registro | Endereço | Número | Foto</th>
                 </tr>
                 <tr>
                 <?php
@@ -47,14 +39,15 @@
                     die("Connection failed: " . mysqli_connect_error());
                 }
 
-                $sql = "SELECT tipo,Endereco_queixa,num_endereco,Descricao,foto FROM formulario";
+                $sql = "SELECT data,tipo,Endereco_queixa,num_endereco,Descricao,image FROM formulario
+                order by data desc";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo "<td> Tipo: " . $row["tipo"] . " |Endereço: " . $row["Endereco_queixa"] . "| Numero: ". $row["num_endereco"] . "| Descrição: " . $row["Descricao"] . 
-                        '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto'] ).'"/>' .
+                        echo "<td>" . "<div> " . " Data: " . $row["data"] . "<br>Tipo: " . $row["tipo"] . "<br>Endereço: " . $row["Endereco_queixa"] . "<br>Numero: ". $row["num_endereco"] . "<br>Descrição: " . $row["Descricao"] . "<div>" .
+                        '<img style="width: 400px;height: 300px;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' . 
                         "<br></td>";
                 }
                 } else {
@@ -64,26 +57,6 @@
                 ?>
                 </tr>
             </table>
-            <h3>Consultar ultimas queixas</h3>
-            <table>
-                <tr>
-                    <th>
-                        Endereço da queixa
-                    </th>
-                    <th>
-                        Numero
-                    </th>
-                    <th>
-                        Descrição
-                    </th>
-                </tr>
-            </table>
         </main>
-        <footer>
-            <section class="titulos">
-                <h3>Ranking de problemas mais recorrentes</h3>
-                <h3>Gráfico de problemas</h3>
-            </section>
-        </footer>
     </body>
 </html>

@@ -9,50 +9,51 @@
     <header class="header">
         <div>
             <a href="Index.php">
-                <img src="Comunidade_Ativa_v1.png" width="300px" height="170px"> 
+                <img src="ComunidadeAtiva.png" width="300px" height="170px"> 
             </a>                                 
         </div>
 
     </header>
 
     <main class="main1">
-        <h1 class="titulo">Faça sua queixa aqui</h1>
-        <form class="form" action="Script.php" method="POST">
+        <h1 class="titulo">Registre sua reclamação</h1>
+        <form class="form" action="Script.php" method="POST" enctype="multipart/form-data">
         <section class="campo_usuario">
                 <label for="nome">Nome</label>
                 <input type="text" required name="nome" placeholder="Rogério Santos"><br><br>
            
-                <label for="email">Email</label>
-                <input type="email" required name="email" placeholder="rogeriosantos@comunidadeativa.com.br"><br><br>
-           
                 <label for="cpf">CPF</label>
                 <input type="tel" required name="cpf" minlength="11" maxlength="14" placeholder="123.456.789-10"><br><br>
-           
+
+                <label for="email">Email</label>
+                <input type="email" required name="email" placeholder="rogeriosantos@comunidadeativa.com.br"><br><br>
+
                 <label for="cep" >CEP</label>
                 <input type="tel" required name="cep" minlength="8" maxlength="10" placeholder="12.345-678" ><br><br>
-                <label for="queixa" placeholder="queixa">Queixa</label>
+
+                <label for="queixa" placeholder="queixa">Ocorrência</label>
                     <select required name="queixa">
                         <option placeholder="" disabled selected>Selecione...</option>
-                        <option placeholder=="queixa1">Vazamento de esgoto</option>
+                        <option placeholder="queixa1">Vazamento de esgoto</option>
                         <option placeholder="queixa2">Falta de água</option>
                         <option placeholder="queixa3">Cano estourado</option>
-                        <option placeholder="queixa4">Outros</option>
+                        <option placeholder="queixa4">Lixo a ceu aberto</option>
+                        <option placeholder="queixa5">Outros</option>
                       </select><br><br>
 
         </section>
         <section class="campo_queixa">
 
-                <label for="endereço_queixa">Rua da ocorrencia</label>
+                <label for="endereço_queixa">Endereço da ocorrência</label>
                 <input type="text" required name="endereço_queixa" placeholder="Rua Alveredo"><br><br>
                 
-                <label for="numero">Numero da ocorrencia</label>
+                <label for="numero">Número da ocorrência</label>
                 <input type="tel" name="numero" placeholder="123"><br><br>
 
-                <label for="foto">Foto do problema</label>
-                <input type="file" name="foto"><br><br> <!-- ver dps - multiplos arquivos-->
-
+                <label for="foto">Anexe uma imagem</label>
+                <input type="file" name="image"><br><br>
                 <label for="descricao">Descrição</label>
-                <textarea cols=50 rows=6 name="descrição" maxlength="500" placeholder="Resumo do problema a se relatar"></textarea><br><br>
+                <textarea cols=50 rows=4 name="descrição" maxlength="500" placeholder="Resumo do problema a se relatar"></textarea><br><br>
 
             
                

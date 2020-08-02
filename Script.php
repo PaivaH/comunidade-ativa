@@ -15,34 +15,40 @@
     $tipo = $_POST["queixa"];
     $endereco = $_POST["endereço_queixa"];
     $numend = $_POST["numero"];
+    $image = $_FILES['image']['tmp_name'];
+    $tamanho = $_FILES['image']['size'];
     $descricao = $_POST["descrição"];
-    $image = addslashes(file_get_contents($p['images']['tmp_name']));
-    $dia = date("Y-m-d");
-    ?>
+    $dia = date("Y-m-d h:i:sa");
+    if ( $image != "none" ){
+        $fp = fopen($image, "rb");
+        $conteudo = fread($fp, $tamanho);
+        $conteudo = addslashes($conteudo);
+        fclose($fp);
+    }else{
+        echo "Sem arquivo enviado";
+    }
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "comunidadeativa";
 
-    <?php
-       $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "comunidadeativa";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-        // Create connection
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        // Check connection
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+    $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP,tipo, Endereco_queixa,num_endereco, Descricao, `image` , data)
+    VALUES ( '$nome', '$email', '$CPF', '$cep', '$tipo', '$endereco', '$numend', '$descricao', '$conteudo' ,'$dia')";
 
-        $sql = "INSERT INTO formulario (Nome, Email, cpf, CEP,tipo, Endereco_queixa,num_endereco, Descricao, foto, data)
-        VALUES ( '$nome', '$email', '$CPF', '$cep', '$tipo', '$endereco', '$numend', '$descricao', '$imgae', '$dia')";
+    if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+    } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
-        if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-        } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-
-        mysqli_close($conn);
+    mysqli_close($conn);
     ?>
 </body>
 </html>
